@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+  - source: target/java-sec-code-1.0.0.jar
+    destination: /var/lib/java-sec-code-1.0.0/
+
+hooks:
+  BeforeInstall:
+    - location: scripts/aws_deployment.sh
+      timeout: 300
+      runas: root
